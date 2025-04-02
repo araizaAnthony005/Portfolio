@@ -114,15 +114,22 @@ footer {
   border-top: 1px solid var(--accent-color);
 }
 
-/* Responsive Nav */
 @media (max-width: 768px) {
   header nav {
     flex-direction: column;
     align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 10px;
   }
 
   #hamburger {
     display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
   #nav-links {
@@ -131,6 +138,9 @@ footer {
     opacity: 0;
     pointer-events: none;
     width: 100%;
+    gap: 12px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
   }
 
   #nav-links.active {
@@ -142,7 +152,8 @@ footer {
   nav ul {
     flex-direction: column;
     width: 100%;
-    gap: 10px;
+    padding-left: 0;
+    gap: 12px;
   }
 
   nav li {
@@ -154,41 +165,51 @@ footer {
     display: block;
     width: 100%;
     text-align: left;
+    padding: 14px 18px;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+  }
+
+  .theme-toggle {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  section {
+    padding: 10px 0;
+  }
+
+  .project-card {
+    padding: 20px 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .project-card a {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    margin-top: 10px;
+    font-size: 1.05rem;
+    border-radius: 8px;
+    text-align: center;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .project-card a:hover {
+    background-color: #005fcc;
   }
 }
-.project-card {
-  background: var(--card, #ffffff);
-  color: var(--text-color);
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: background 0.3s ease, color 0.3s ease;
-}
 
-.project-card h3,
-.project-card p,
-.project-card a {
-  color: var(--text-color);
-}
-
-.project-card h3 {
-  margin-top: 0;
-}
-
-.project-card p {
-  margin: 10px 0;
-}
-
-.project-card a {
-  display: inline-block;
-  margin-right: 10px;
-  margin-top: 10px;
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.project-card a:hover {
-  text-decoration: underline;
+/* Tap animation */
+button:active,
+a:active {
+  transform: scale(0.96);
+  opacity: 0.9;
+  transition: transform 0.1s ease, opacity 0.1s ease;
 }
